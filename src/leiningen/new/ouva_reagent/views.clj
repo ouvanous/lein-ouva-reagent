@@ -31,7 +31,7 @@
         "js/out/goog/base.js"
         "js/react-with-addons.min.js"
         "js/app.js")
-      (javascript-tag "goog.require(\"{{ns-name}}.core\");")]))
+      (javascript-tag "goog.require(\"{{sanitized}}.core\");")]))
 
 
 

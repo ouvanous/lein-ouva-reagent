@@ -30,7 +30,7 @@
 
 
 (defn app []
-  [:div [:h1 (:name @state)]])
+  [:div [:h1 (:app-name @state)]])
 
 
 
