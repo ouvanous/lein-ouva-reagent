@@ -2,6 +2,8 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/clojurescript "0.0-2727"]
                  [cljs-ajax "0.3.9"]
+                 [reagent/reagent-cursor "0.1.2"]
+                 [historian "1.0.7"]
                  [http-kit "2.1.16"]
                  [figwheel "0.2.2-SNAPSHOT"]  
                  [ring "1.3.2"]
