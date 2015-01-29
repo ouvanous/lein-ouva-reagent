@@ -18,6 +18,7 @@
              ["src/clj/{{sanitized}}/views.clj" (render "views.clj" data)]
              ["src/clj/{{sanitized}}/api.clj" (render "api.clj" data)]
              ["resources/{{ns-name}}.properties" (render "project.properties" data)]
+             ["resources/log4j.properties" (render "log4j.properties")]
              ["resources/public/css/app.styl" (render "app.styl" data)]
              ["resources/public/css/pure-min.css" (render "pure-min.css")]
              ["resources/public/css/ionicons.min.css" (render "ionicons.min.css")]
