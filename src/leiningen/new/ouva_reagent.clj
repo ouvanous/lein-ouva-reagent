@@ -5,12 +5,12 @@
 (def render (renderer "ouva-reagent"))
 
 (defn ouva-reagent
-  "--FIXME: write documentation"
+  "FIXME: write documentation"
   [name]
   (let [data {:name name
               :ns-name (sanitize-ns name)
               :sanitized (name-to-path name)}]
-    (main/info "Generating fresh 'lein new' ouva-reagent project.")
+    (main/info "Generating fresh 'lein new' ouva-reagent project. .....")
     (->files data ["src/cljs/{{sanitized}}/core.cljs" (render "core.cljs" data)]
                   ["src/cljs/{{sanitized}}/utils.cljs" (render "utils.cljs" data)]
                   ["src/cljs/{{sanitized}}/states.cljs" (render "states.cljs" data)]
