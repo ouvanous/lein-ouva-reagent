@@ -29,8 +29,7 @@
       content
       (include-js  
         "js/out/goog/base.js"
-        "js/react-with-addons.min.js"
-        "js/moment.min.js"
+        "js/react.min.js"
         "js/app.js")
       (javascript-tag "goog.require(\"{{sanitized}}.core\");")]))
 

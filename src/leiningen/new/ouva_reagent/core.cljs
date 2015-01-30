@@ -1,10 +1,8 @@
 (ns {{ns-name}}.core
     (:require [reagent.core :as r :refer [atom]]
-              [{{ns-name}}.utils :as u]
               [figwheel.client :as fw]
-              [reagent.cursor :as rc]
-              [historian.core :as hist]
-              [ajax.core :refer [GET POST]]))
+              [{{ns-name}}.states :as s]
+              [{{ns-name}}.utils :as u]))
 
 
 
@@ -19,7 +17,7 @@
   (if b
     (fw/start {
              :websocket-url "ws://localhost:3449/figwheel-ws"
-             :build-id "reagent-test1"
+             :build-id "{{ns-name}}"
              :on-jsload (fn [] (print "reloaded"))})))
 
 (set-dev-env dev?)
@@ -28,25 +26,24 @@
 
 
 
-; app state
-(defonce state (r/atom {:app {:name "{{name}}"}}))
+(defn header 
+  []
+  [:div.header {:class (u/class-set {"test" true})}
+    [:h1 @s/app-name]])
 
 
-
-
-
-
-; cursors
-(def app-name (rc/cursor [:app :name] state))
-
-
-
-
+(defn app-ctrls
+  []
+  [:div.app-ctrls 
+        [:span (:ts @s/state)]
+        [:button.pure-button.refresh-button {:on-click #(swap! s/state assoc :ts (u/get-timestamp))} "refresh" ]
+        [:button.pure-button {:on-click #(s/undo!)} "undo" ]])
 
 
 ; app 
 (defn app []
-  [:div [:h1 @app-name]])
+  [:div [header]
+        [app-ctrls]])
 
 
 

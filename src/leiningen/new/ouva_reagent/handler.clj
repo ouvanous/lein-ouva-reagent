@@ -44,18 +44,16 @@
 
 (def app
   (-> (handler/site app-routes)
-      (wrap-params)
-      (wrap-multipart-params)
-      (wrap-json-body)
+      ; (wrap-params)
+      ; (wrap-multipart-params)
       (wrap-json-response)
       (wrap-gzip)))
 
 (def fw-app
   (-> (handler/site app-routes)
       (reload/wrap-reload)
-      (wrap-params)
-      (wrap-multipart-params)
-      (wrap-json-body)
+      ; (wrap-params)
+      ; (wrap-multipart-params)
       (wrap-json-response)
       (wrap-gzip)))
 
