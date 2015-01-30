@@ -1,16 +1,16 @@
-(ns leiningen.new.ouva-reagent
+(ns leiningen.new.lein-ouva-reagent
   (:require [leiningen.new.templates :refer [renderer sanitize-ns name-to-path ->files]]
             [leiningen.core.main :as main]))
 
-(def render (renderer "ouva-reagent"))
+(def render (renderer "lein-ouva-reagent"))
 
-(defn ouva-reagent
+(defn lein-ouva-reagent
   "FIXME: write documentation"
   [name]
   (let [data {:name name
               :ns-name (sanitize-ns name)
               :sanitized (name-to-path name)}]
-    (main/info "Generating fresh 'lein new' ouva-reagent project. .....")
+    (main/info "Generating fresh 'lein new' lein-ouva-reagent project. .....")
     (->files data ["src/cljs/{{sanitized}}/core.cljs" (render "core.cljs" data)]
                   ["src/cljs/{{sanitized}}/utils.cljs" (render "utils.cljs" data)]
                   ["src/cljs/{{sanitized}}/states.cljs" (render "states.cljs" data)]
