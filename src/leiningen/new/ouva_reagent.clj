@@ -11,7 +11,9 @@
               :ns-name (sanitize-ns name)
               :sanitized (name-to-path name)}]
     (main/info "Generating fresh 'lein new' ouva-reagent project.")
-    (->files data ["src/cljs/{{sanitized}}/core.cljs" (render "core.cljs" data)]
+    (->files data 
+              ["src/cljs/{{sanitized}}/core.cljs" (render "core.cljs" data)]
+              ["src/cljs/{{sanitized}}/utils.cljs" (render "utils.cljs" data)]
              ["project.clj" (render "project.clj" data)]
              ["gulpfile.js" (render "gulpfile.js")]
              ["src/clj/{{sanitized}}/handler.clj" (render "handler.clj" data)]
@@ -27,6 +29,7 @@
              ["resources/public/fonts/ionicons.eot" (render "fonts/ionicons.eot")]
              ["resources/public/fonts/ionicons.svg" (render "fonts/ionicons.svg")]
              ["resources/public/fonts/ionicons.woff" (render "fonts/ionicons.woff")]
+             ["resources/public/js/moment.min.js" (render "moment.min.js")]
              ["resources/public/js/react-with-addons.min.js" (render "react-with-addons.min.js")]
              "resources/public/data"
              "resources/public/img")))

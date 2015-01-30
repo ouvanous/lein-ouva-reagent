@@ -1,5 +1,6 @@
 (ns {{ns-name}}.core
     (:require [reagent.core :as r :refer [atom]]
+              [{{ns-name}}.utils :as u]
               [figwheel.client :as fw]
               [reagent.cursor :as rc]
               [historian.core :as hist]
